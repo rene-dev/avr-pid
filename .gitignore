@@ -3,3 +3,4 @@
 *.hex
 *.eep
 *.o
+*.elf
