@@ -60,9 +60,9 @@ int16_t pid(int16_t);
 
 void init(){
 	pwm_init(10, 0);
-	encoder_init();
-	signal_init();
-	timer0_init(0);
+	//encoder_init();
+	//signal_init();
+	//timer0_init(0);
 
 	DLR = (1<<NLR);
 	DPWM = (1<<NPWM);
@@ -302,7 +302,8 @@ void delay_ms(uint16_t ms)
 
 void error(int8_t i){
 	pwm(0);
-	for(int8_t j = 0; j < i; j ++){
+	int8_t j;
+	for(j = 0; j < i; j ++){
 		delay_ms(100);	
 	}
 	return;
@@ -345,7 +346,7 @@ int main(void){
 
 	int tmp = 0;
 	int diff = 0;
-				
+
 	while (1){
 		if(TCNT0 >= FR){
 			TCNT0 = 0;
@@ -364,7 +365,7 @@ int main(void){
 			}
 			tmp++;
 		}
-	}
+	}*/
 	
 	return(0);
 }
